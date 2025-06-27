@@ -1,0 +1,619 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Business Strategy Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Beginner Business Strategy Planner</h1>
+            <p>Your step-by-step guide to planning and launching your first business</p>
+        </div>
+
+
+        <div class="planner-container">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar">
+                <nav>
+                    <button class="nav-button active" data-section="idea">
+                        <span class="icon">💡</span>
+                        <span>Business Idea</span>
+                    </button>
+                    <button class="nav-button" data-section="customers">
+                        <span class="icon">👥</span>
+                        <span>Target Customers</span>
+                    </button>
+                    <button class="nav-button" data-section="financials">
+                        <span class="icon">💰</span>
+                        <span>Basic Financials</span>
+                    </button>
+                    <button class="nav-button" data-section="goals">
+                        <span class="icon">🎯</span>
+                        <span>Goals & Milestones</span>
+                    </button>
+                    <button class="nav-button" data-section="skills">
+                        <span class="icon">📚</span>
+                        <span>Skills & Resources</span>
+                    </button>
+                    <button class="nav-button" data-section="launch">
+                        <span class="icon">⚡</span>
+                        <span>Launch Plan</span>
+                    </button>
+                    <button class="nav-button" data-section="summary">
+                        <span class="icon">📄</span>
+                        <span>Your Business Plan</span>
+                    </button>
+                </nav>
+            </div>
+
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Business Idea Section -->
+                <div id="idea" class="section active">
+                    <div class="info-box yellow">
+                        <h3>💡 Define Your Business Idea</h3>
+                        <p>Start with clarity about what you want to create and why it matters.</p>
+                    </div>
+
+
+                    <div class="info-box blue">
+                        <h3>What's Your Business Idea?</h3>
+                        <div class="form-group">
+                            <textarea 
+                                id="businessIdea" 
+                                placeholder="Describe your business idea in simple terms. What product or service will you offer? (e.g., 'I want to start a dog walking service for busy professionals in my neighborhood')"
+                            ></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box green">
+                        <h3>What Problem Does It Solve?</h3>
+                        <div class="form-group">
+                            <textarea 
+                                id="problemSolved" 
+                                placeholder="Every successful business solves a problem. What pain point or need will your business address? (e.g., 'Busy professionals don't have time to walk their dogs during the day')"
+                            ></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box purple">
+                        <h3>Your Value Proposition</h3>
+                        <div class="form-group">
+                            <textarea 
+                                id="valueProposition" 
+                                placeholder="Why should customers choose you? What makes your solution unique or better? (e.g., 'Reliable, insured dog walking with real-time updates and photos')"
+                            ></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box orange">
+                        <h3>Business Model</h3>
+                        <div class="form-group">
+                            <select id="businessModel">
+                                <option value="">How will you make money?</option>
+                                <option value="Product Sales (Physical goods)">Product Sales (Physical goods)</option>
+                                <option value="Service Provider (Consulting, freelancing)">Service Provider (Consulting, freelancing)</option>
+                                <option value="Subscription (Monthly/yearly recurring)">Subscription (Monthly/yearly recurring)</option>
+                                <option value="Marketplace (Connect buyers & sellers)">Marketplace (Connect buyers & sellers)</option>
+                                <option value="Digital Products (Courses, software)">Digital Products (Courses, software)</option>
+                                <option value="Affiliate Marketing">Affiliate Marketing</option>
+                                <option value="Franchise">Franchise</option>
+                                <option value="Drop-shipping">Drop-shipping</option>
+                                <option value="Not sure yet">Not sure yet</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Customers Section -->
+                <div id="customers" class="section">
+                    <div class="info-box blue">
+                        <h3>👥 Know Your Customers</h3>
+                        <p>Understanding who you serve is crucial for success. Be specific!</p>
+                    </div>
+
+
+                    <div class="list-input">
+                        <h3>Who Are Your Target Customers?</h3>
+                        <div class="add-item">
+                            <input type="text" id="customerInput" placeholder="Describe a specific customer type (e.g., 'Working parents with dogs aged 25-45')">
+                            <button onclick="addCustomer()">Add</button>
+                        </div>
+                        <div id="customerList" class="list-items"></div>
+                    </div>
+
+
+                    <div class="info-box yellow">
+                        <h3>Customer Research Questions</h3>
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>Demographics to Consider:</h4>
+                                <ul>
+                                    <li>• Age range</li>
+                                    <li>• Income level</li>
+                                    <li>• Location (local, online, etc.)</li>
+                                    <li>• Lifestyle factors</li>
+                                    <li>• Current pain points</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Where to Find Them:</h4>
+                                <ul>
+                                    <li>• Social media platforms</li>
+                                    <li>• Local community groups</li>
+                                    <li>• Online forums/communities</li>
+                                    <li>• Physical locations they visit</li>
+                                    <li>• Professional networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="list-input">
+                        <h3>Revenue Streams</h3>
+                        <div class="add-item">
+                            <input type="text" id="revenueInput" placeholder="How will you charge customers? (e.g., '$25 per walk', 'Monthly subscription $99')">
+                            <button onclick="addRevenue()">Add</button>
+                        </div>
+                        <div id="revenueList" class="list-items"></div>
+                    </div>
+                </div>
+
+
+                <!-- Financials Section -->
+                <div id="financials" class="section">
+                    <div class="info-box green">
+                        <h3>💰 Basic Financial Planning</h3>
+                        <p>Start with realistic estimates. You can refine these as you learn more.</p>
+                    </div>
+
+
+                    <div class="info-box blue">
+                        <h3>Startup Costs (One-time expenses)</h3>
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label>Equipment & Tools</label>
+                                <input type="text" id="equipmentCost" placeholder="$500" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Initial Inventory</label>
+                                <input type="text" id="inventoryCost" placeholder="$1,000" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Marketing & Branding</label>
+                                <input type="text" id="marketingCost" placeholder="$300" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Legal & Registration</label>
+                                <input type="text" id="legalCost" placeholder="$200" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Other Startup Costs</label>
+                                <input type="text" id="otherStartupCost" placeholder="$400" oninput="updateFinancials()">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>Total Startup Costs: $<span id="totalStartup">0</span></h4>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box orange">
+                        <h3>Monthly Operating Expenses</h3>
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label>Rent/Office Space</label>
+                                <input type="text" id="rentCost" placeholder="$800" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Utilities & Internet</label>
+                                <input type="text" id="utilitiesCost" placeholder="$150" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Supplies & Materials</label>
+                                <input type="text" id="suppliesCost" placeholder="$200" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Marketing & Advertising</label>
+                                <input type="text" id="monthlyMarketingCost" placeholder="$100" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Insurance</label>
+                                <input type="text" id="insuranceCost" placeholder="$75" oninput="updateFinancials()">
+                            </div>
+                            <div class="form-group">
+                                <label>Other Monthly Costs</label>
+                                <input type="text" id="otherMonthlyCost" placeholder="$125" oninput="updateFinancials()">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>Total Monthly Expenses: $<span id="totalMonthly">0</span></h4>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box" style="background: #fef2f2; border-color: #ef4444;">
+                        <h3>Break-Even Analysis</h3>
+                        <div class="grid grid-2">
+                            <div class="card">
+                                <h4>Monthly Revenue Needed:</h4>
+                                <div class="stat-number" style="color: #ef4444;">$<span id="breakEven">0</span></div>
+                                <p style="font-size: 0.9rem; color: #7f1d1d;">Just to cover expenses</p>
+                            </div>
+                            <div class="card">
+                                <h4>Recommended Target:</h4>
+                                <div class="stat-number" style="color: #ef4444;">$<span id="recommendedTarget">0</span></div>
+                                <p style="font-size: 0.9rem; color: #7f1d1d;">50% buffer for growth & profit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Goals Section -->
+                <div id="goals" class="section">
+                    <div class="info-box purple">
+                        <h3>🎯 Set Your Goals</h3>
+                        <p>Clear goals keep you focused and motivated. Start with achievable milestones.</p>
+                    </div>
+
+
+                    <div class="list-input">
+                        <h3>Short-term Goals (Next 3 months)</h3>
+                        <div class="add-item">
+                            <input type="text" id="shortTermInput" placeholder="e.g., 'Register business name', 'Get first 5 customers'">
+                            <button onclick="addShortTermGoal()">Add</button>
+                        </div>
+                        <div id="shortTermList" class="list-items"></div>
+                    </div>
+
+
+                    <div class="list-input">
+                        <h3>Medium-term Goals (3-12 months)</h3>
+                        <div class="add-item">
+                            <input type="text" id="mediumTermInput" placeholder="e.g., 'Reach $5,000 monthly revenue', 'Hire first employee'">
+                            <button onclick="addMediumTermGoal()">Add</button>
+                        </div>
+                        <div id="mediumTermList" class="list-items"></div>
+                    </div>
+
+
+                    <div class="list-input">
+                        <h3>Long-term Goals (1-3 years)</h3>
+                        <div class="add-item">
+                            <input type="text" id="longTermInput" placeholder="e.g., 'Open second location', 'Reach $50,000 annual profit'">
+                            <button onclick="addLongTermGoal()">Add</button>
+                        </div>
+                        <div id="longTermList" class="list-items"></div>
+                    </div>
+
+
+                    <div class="info-box yellow">
+                        <h3>Goal-Setting Tips</h3>
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>Make Goals SMART:</h4>
+                                <ul>
+                                    <li>• <strong>S</strong>pecific - Clear and detailed</li>
+                                    <li>• <strong>M</strong>easurable - Can track progress</li>
+                                    <li>• <strong>A</strong>chievable - Realistic for you</li>
+                                    <li>• <strong>R</strong>elevant - Important to your business</li>
+                                    <li>• <strong>T</strong>ime-bound - Has a deadline</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Examples of Good Goals:</h4>
+                                <ul>
+                                    <li>• "Get 10 paying customers by month 2"</li>
+                                    <li>• "Earn $2,000 revenue in first month"</li>
+                                    <li>• "Complete business registration by week 3"</li>
+                                    <li>• "Build email list of 100 prospects"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Skills Section -->
+                <div id="skills" class="section">
+                    <div class="info-box" style="background: #f0f9ff; border-color: #0ea5e9;">
+                        <h3>📚 Skills & Resources Assessment</h3>
+                        <p>Know what you have and what you need to acquire or outsource.</p>
+                    </div>
+
+
+                    <div class="grid grid-2">
+                        <div class="list-input" style="background: #f0fdf4;">
+                            <h3>Skills You Already Have</h3>
+                            <div class="add-item">
+                                <input type="text" id="skillsHaveInput" placeholder="e.g., 'Social media marketing', 'Customer service'">
+                                <button onclick="addSkillHave()">Add</button>
+                            </div>
+                            <div id="skillsHaveList" class="list-items"></div>
+                        </div>
+
+
+                        <div class="list-input" style="background: #fef2f2;">
+                            <h3>Skills You Need to Learn/Hire</h3>
+                            <div class="add-item">
+                                <input type="text" id="skillsNeedInput" placeholder="e.g., 'Bookkeeping', 'Website design'">
+                                <button onclick="addSkillNeed()">Add</button>
+                            </div>
+                            <div id="skillsNeedList" class="list-items"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box" style="background: #f9fafb;">
+                        <h3>Resource Planning</h3>
+                        
+                        <div class="form-group">
+                            <label>How will you fund your startup?</label>
+                            <select id="fundingSource">
+                                <option value="">Select funding source</option>
+                                <option value="Personal savings">Personal savings</option>
+                                <option value="Family/friends loan">Family/friends loan</option>
+                                <option value="Bank loan">Bank loan</option>
+                                <option value="Credit cards">Credit cards</option>
+                                <option value="Investor">Investor</option>
+                                <option value="Crowdfunding">Crowdfunding</option>
+                                <option value="Revenue from day job">Revenue from day job</option>
+                                <option value="Combination">Combination of sources</option>
+                            </select>
+                        </div>
+
+
+                        <div class="list-input">
+                            <h3>Equipment/Tools You Need</h3>
+                            <div class="add-item">
+                                <input type="text" id="equipmentInput" placeholder="e.g., 'Laptop', 'Software license', 'Professional camera'">
+                                <button onclick="addEquipment()">Add</button>
+                            </div>
+                            <div id="equipmentList" class="list-items"></div>
+                        </div>
+
+
+                        <div class="list-input">
+                            <h3>Support Network</h3>
+                            <div class="add-item">
+                                <input type="text" id="supportInput" placeholder="e.g., 'Mentor in industry', 'Accountant friend', 'Local business group'">
+                                <button onclick="addSupport()">Add</button>
+                            </div>
+                            <div id="supportList" class="list-items"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Launch Section -->
+                <div id="launch" class="section">
+                    <div class="info-box orange">
+                        <h3>⚡ Your Launch Plan</h3>
+                        <p>Break down your launch into manageable steps. Start small and build momentum.</p>
+                    </div>
+
+
+                    <div class="list-input">
+                        <h3>First Steps to Take (Priority Order)</h3>
+                        <div class="add-item">
+                            <input type="text" id="firstStepInput" placeholder="e.g., 'Research competitors', 'Create business name', 'Set up bank account'">
+                            <button onclick="addFirstStep()">Add</button>
+                        </div>
+                        <div id="firstStepList" class="list-items"></div>
+                    </div>
+
+
+                    <div class="info-box blue">
+                        <h3>Pre-Launch Checklist</h3>
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>Legal & Admin:</h4>
+                                <ul>
+                                    <li>☐ Choose business structure (LLC, etc.)</li>
+                                    <li>☐ Register business name</li>
+                                    <li>☐ Get required licenses/permits</li>
+                                    <li>☐ Open business bank account</li>
+                                    <li>☐ Get business insurance</li>
+                                    <li>☐ Set up basic bookkeeping</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Marketing & Operations:</h4>
+                                <ul>
+                                    <li>☐ Create simple website/online presence</li>
+                                    <li>☐ Design basic logo/branding</li>
+                                    <li>☐ Set up social media accounts</li>
+                                    <li>☐ Create pricing structure</li>
+                                    <li>☐ Develop service/product delivery process</li>
+                                    <li>☐ Plan customer communication system</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box green">
+                        <h3>Launch Timeline Template</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-number">1</div>
+                            <div>
+                                <h4>Week 1-2: Foundation</h4>
+                                <p>Legal setup, business registration, bank account</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-number">2</div>
+                            <div>
+                                <h4>Week 3-4: Brand & Online Presence</h4>
+                                <p>Logo, website, social media setup</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-number">3</div>
+                            <div>
+                                <h4>Week 5-6: Soft Launch</h4>
+                                <p>Test with friends/family, refine processes</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-number">4</div>
+                            <div>
+                                <h4>Week 7+: Public Launch</h4>
+                                <p>Marketing campaign, customer acquisition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Summary Section -->
+                <div id="summary" class="section">
+                    <div id="completionHeader" class="completion-header incomplete">
+                        <h3 id="completionTitle">📋 Business Plan in Progress</h3>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 20px;">
+                            <p id="completionMessage">Complete a few more sections to unlock your full business strategy package.</p>
+                            <div style="text-align: right;">
+                                <div style="font-size: 3rem; font-weight: bold;" id="completionPercentage">0%</div>
+                                <div style="font-size: 0.9rem; opacity: 0.9;">Complete</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="grid grid-4">
+                        <div class="stat-card blue">
+                            <div class="stat-number" id="summaryStartupCost">$0</div>
+                            <div class="stat-label">Startup Investment</div>
+                        </div>
+                        <div class="stat-card green">
+                            <div class="stat-number" id="summaryRevenueTarget">$0</div>
+                            <div class="stat-label">Revenue Target</div>
+                        </div>
+                        <div class="stat-card purple">
+                            <div class="stat-number" id="summaryCustomers">0</div>
+                            <div class="stat-label">Customer Segments</div>
+                        </div>
+                        <div class="stat-card orange">
+                            <div class="stat-number" id="summarySteps">0</div>
+                            <div class="stat-label">Action Items</div>
+                        </div>
+                    </div>
+
+
+                    <div id="downloadSection" class="download-section hidden">
+                        <h4>📄 Your Business Documents Are Ready!</h4>
+                        <p>Download your complete business strategy package including personalized recommendations.</p>
+                        
+                        <div class="grid grid-3" style="margin-top: 20px;">
+                            <button onclick="downloadBusinessPlan()" class="btn btn-primary">
+                                📄 Complete Business Plan
+                            </button>
+                            <button onclick="downloadActionPlan()" class="btn btn-success">
+                                📋 Action Plan Checklist
+                            </button>
+                            <button onclick="downloadFinancials()" class="btn" style="background: #8b5cf6; color: white;">
+                                📊 Financial Projections
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div id="recommendationsSection" class="recommendations">
+                        <h4>💡 Personalized Recommendations</h4>
+                        <div id="recommendationsList"></div>
+                    </div>
+
+
+                    <div class="card">
+                        <h4>🎯 Your 90-Day Launch Plan</h4>
+                        <div class="grid grid-2" style="margin-top: 20px;">
+                            <div>
+                                <h5 style="border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Week 1-2</h5>
+                                <ul id="week1Tasks"></ul>
+                            </div>
+                            <div>
+                                <h5 style="border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Week 3-4</h5>
+                                <ul id="week3Tasks"></ul>
+                            </div>
+                            <div>
+                                <h5 style="border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Month 2-3</h5>
+                                <ul id="month2Tasks"></ul>
+                            </div>
+                            <div>
+                                <h5 style="border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Month 4-6</h5>
+                                <ul id="month4Tasks"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box" style="background: #f9fafb;">
+                        <h4>📚 Recommended Resources</h4>
+                        <div class="grid grid-3">
+                            <div>
+                                <h5>📖 Learning</h5>
+                                <ul>
+                                    <li>• SCORE Free Business Mentoring</li>
+                                    <li>• SBA Startup Guides</li>
+                                    <li>• Local SBDC Centers</li>
+                                    <li>• Industry-specific courses</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>🛠️ Tools</h5>
+                                <ul>
+                                    <li>• QuickBooks (Accounting)</li>
+                                    <li>• Canva (Design)</li>
+                                    <li>• Google Workspace (Email)</li>
+                                    <li>• Mailchimp (Email Marketing)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>⚖️ Legal</h5>
+                                <ul>
+                                    <li>• LegalZoom (Business Formation)</li>
+                                    <li>• NOLO (Legal Guides)</li>
+                                    <li>• Local Attorney Referrals</li>
+                                    <li>• State Business Registration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cta-section">
+                        <h4>🚀 Ready to Launch Your Business?</h4>
+                        <p>You've completed your business planning foundation. Now it's time to take action!</p>
+                        <a href="https://stan.store/EbTheMogul" target="_blank" rel="noopener noreferrer" class="btn" style="background: white; color: #4f46e5; font-weight: bold; font-size: 1.1rem; padding: 15px 30px;">
+                            Schedule 1-on-1 Call
+                        </a>
+                    </div>
+
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="saveProgress()" class="btn" style="background: #6b7280; color: white; margin-right: 15px;">
+                            💾 Save Progress
+                        </button>
+                        <button onclick="emailSummary()" class="btn btn-primary">
+                            📧 Email Me Summary
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
